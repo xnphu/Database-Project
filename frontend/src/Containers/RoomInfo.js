@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import axios from "../Configs/axiosConfig";
-import { Container, Table, Button, Input } from 'reactstrap';
+import { Container, Table, Button } from 'reactstrap';
 
 class RoomInfo extends Component {
     state = {
@@ -31,23 +31,28 @@ class RoomInfo extends Component {
                     <td>{info.bedroom}</td>
                     <td>{info.bed}</td>
                     <td>{info.bath}</td>
+                    <td>
+                        <Button color="success">Edit</Button>
+                        <Button color="danger" className="ml-2">Delete</Button>
+                    </td>
                 </tr>
             ))
             : "";
         return (
             <Container>
-                <h1 className="text-center">Room's Information</h1>
-                <Table striped bordered>
+                <h1 className="text-center mt-5">Room's Information</h1>
+                <Table striped bordered className="mt-3">
                     <thead>
                         <tr>
                             <th>Host's name</th>
                             <th>Guest's name</th>
                             <th>Address</th>
-                            <th>Booking Fee  ( $/night)</th>
-                            <th>Number of Guests</th>
-                            <th>Bedroom</th>
-                            <th>Bed</th>
-                            <th>Bath</th>
+                            <th>Booking Fee ($/night)</th>
+                            <th>Guest(s)</th>
+                            <th>Bedroom(s)</th>
+                            <th>Bed(s)</th>
+                            <th>Bath(s)</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,15 +60,7 @@ class RoomInfo extends Component {
                     </tbody>
                 </Table>
                 <div className="d-flex justify-content-center">
-                    <div>
-                        <Button color="primary" className="mr-3">Add</Button>
-                    </div>
-                    <div>
-                        <Button color="success">Edit</Button>
-                    </div>
-                    <div>
-                        <Button color="danger" className="ml-3">Delete</Button>
-                    </div>
+                    <Button color="primary" className="my-2">Add</Button>
                 </div>
             </Container>
         );
