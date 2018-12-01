@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import axios from "../Configs/axiosConfig";
 import { Container, Table, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 class HostInfo extends Component {
     state = {
@@ -29,8 +30,9 @@ class HostInfo extends Component {
                     <td>{info.age}</td>
                     <td>{info.phone}</td>
                     <td>
-                        <Button color="success">Edit</Button>
-                        <Button color="danger" className="ml-2">Delete</Button>
+                        <Link to={`/hosts/${info._id}/edit`}>
+                            <Button color="success">Edit</Button>
+                        </Link>
                     </td>
                 </tr>
             ))
@@ -38,6 +40,11 @@ class HostInfo extends Component {
         return (
             <Container>
                 <h1 className="text-center mt-5">Host's Information</h1>
+                <div>
+                    <Link to={"/hosts/createNew"}>
+                        <Button color="primary" className="mt-3">Add</Button>
+                    </Link>                   
+                </div>
                 <Table striped bordered className="mt-3">
                     <thead>
                         <tr>
@@ -53,9 +60,6 @@ class HostInfo extends Component {
                         {allInfo}
                     </tbody>
                 </Table>
-                <div className="d-flex justify-content-center">
-                    <Button color="primary" className="mt-3">Add</Button>
-                </div>
             </Container>
         );
     }

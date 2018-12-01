@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import axios from "../Configs/axiosConfig";
 import { Container, Table, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 class RoomInfo extends Component {
     state = {
@@ -24,7 +25,13 @@ class RoomInfo extends Component {
             ? this.state.rooms.map(info => (
                 <tr key={info._id}>
                     <td>{info.host.name}</td>
-                    <td>{info.guest.name}</td>
+                    {/* <td>{info.guest.name}</td> */}
+                    <td>
+                        {info.guest
+                            ? info.guest.map(guest => (guest.name) + ", ")
+                            :""
+                        }
+                    </td>
                     <td>{info.address}</td>
                     <td>{info.bookingfee}</td>
                     <td>{info.numberOfGuests}</td>
@@ -32,8 +39,9 @@ class RoomInfo extends Component {
                     <td>{info.bed}</td>
                     <td>{info.bath}</td>
                     <td>
-                        <Button color="success">Edit</Button>
-                        <Button color="danger" className="ml-2">Delete</Button>
+                        <Link to={`/rooms/${info._id}/edit`}>
+                            <Button color="success">Edit</Button>
+                        </Link>
                     </td>
                 </tr>
             ))
@@ -41,6 +49,11 @@ class RoomInfo extends Component {
         return (
             <Container>
                 <h1 className="text-center mt-5">Room's Information</h1>
+                <div>
+                    <Link to={"/rooms/createNew"}>
+                        <Button color="primary" className="my-2">Add</Button>
+                    </Link>
+                </div>
                 <Table striped bordered className="mt-3">
                     <thead>
                         <tr>
@@ -59,9 +72,6 @@ class RoomInfo extends Component {
                         {allInfo}
                     </tbody>
                 </Table>
-                <div className="d-flex justify-content-center">
-                    <Button color="primary" className="my-2">Add</Button>
-                </div>
             </Container>
         );
     }

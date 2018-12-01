@@ -8,7 +8,7 @@ const RoomSchema = new Schema({
     bookingfee: ({ type: Number, default: 0}),
     host: ({ type: Schema.Types.ObjectId, ref: "Host" }),
     numberOfGuests: ({ type: Number, default: 0 }),
-    guest: ({ type: Schema.Types.ObjectId, ref: "Guest" }),
+    guest: [{ type: Schema.Types.ObjectId, ref: "Guest" }],
     bedroom: ({ type: Number }),
     bed: ({ type: Number }),
     bath: ({ type: Number })

@@ -4,22 +4,22 @@ import axios from "../Configs/axiosConfig";
 import { Container, Table, Button, Input } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-class EditGuest extends Component {
+class EditHost extends Component {
     state = {
     }
 
     componentDidMount() {
         axios
-            .get(`/api/guests/${this.props.match.params.guestId}`)
+            .get(`/api/hosts/${this.props.match.params.hostId}`)
             .then(response => {
-                console.log(this.props.match.params.guestId)
-                console.log(response.data.guestFound)
+                console.log(this.props.match.params.hostId)
+                console.log(response.data.hostFound)
                 this.setState({
-                    _id: response.data.guestFound._id,
-                    name: response.data.guestFound.name,
-                    email: response.data.guestFound.email,
-                    age: response.data.guestFound.age,
-                    phone: response.data.guestFound.phone,
+                    _id: response.data.hostFound._id,
+                    name: response.data.hostFound.name,
+                    email: response.data.hostFound.email,
+                    age: response.data.hostFound.age,
+                    phone: response.data.hostFound.phone,
                 });
             })
             .catch(err => console.log(err));
@@ -27,14 +27,14 @@ class EditGuest extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const guestData = {
+        const hostData = {
             name: this.state.name,
             email: this.state.email,
             age: this.state.age,
             phone: this.state.phone
         }
         axios
-            .put(`/api/guests/${this.props.match.params.guestId}`, guestData)
+            .put(`/api/hosts/${this.props.match.params.hostId}`, hostData)
             .then(response => {
                 console.log(response.data);
                 if (response.data.success) {
@@ -53,7 +53,7 @@ class EditGuest extends Component {
     render() {
         return (
             <Container>
-                <h1 className="text-center mt-5">Edit Guest's Information: </h1>
+                <h1 className="text-center mt-5">Edit Host's Information: </h1>
                 <Table striped bordered className="mt-3">
                     <thead>
                         <tr>
@@ -84,7 +84,7 @@ class EditGuest extends Component {
                         className="ml-2 mt-3"
                         onClick={this.handleClick = () => {
                             axios
-                                .delete(`/api/guests/${this.props.match.params.guestId}`)
+                                .delete(`/api/hosts/${this.props.match.params.hostId}`)
                                 .then(response => {
                                     console.log(response.data);
                                     if (response.data.success) {
@@ -101,4 +101,4 @@ class EditGuest extends Component {
     }
 }
 
-export default EditGuest;
+export default EditHost;

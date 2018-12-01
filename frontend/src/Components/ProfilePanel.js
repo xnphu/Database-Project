@@ -10,12 +10,12 @@ class ProfilePanel extends Component {
                 >
                     Login
                 </button>
-                <button
+                {/* <button
                     className="col-6 btn btn-danger btn-sm"
                     onClick={this.props.onLogin}
                 >
                     Signup
-                </button>
+                </button> */}
             </div>
         );
     }

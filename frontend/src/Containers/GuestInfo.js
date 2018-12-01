@@ -30,10 +30,9 @@ class GuestInfo extends Component {
                     <td>{info.age}</td>
                     <td>{info.phone}</td>
                     <td>
-                        <Link to={`/guests/${info._id}`}>
+                        <Link to={`/guests/${info._id}/edit`}>
                             <Button color="success" >Edit</Button>
-                        </Link> 
-                        <Button color="danger" className="ml-2">Delete</Button>
+                        </Link>
                     </td>
                 </tr>
             ))
@@ -41,6 +40,11 @@ class GuestInfo extends Component {
         return (
             <Container>
                 <h1 className="text-center mt-5">Guest's Information</h1>
+                <div>
+                    <Link to={"/guests/createNew"}>
+                        <Button color="primary" className="mt-3">Add</Button>
+                    </Link>
+                </div>
                 <Table striped bordered className="mt-3">
                     <thead>
                         <tr>
@@ -56,11 +60,6 @@ class GuestInfo extends Component {
                         {allInfo}
                     </tbody>
                 </Table>
-                <div className="d-flex justify-content-center">
-                    <Link to={"/guest/createNew"}>
-                        <Button color="primary" className="mt-3">Add</Button>
-                    </Link>
-                </div>
             </Container>
         );
     }
