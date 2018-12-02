@@ -33,7 +33,7 @@ class CreateRoom extends Component {
             .then(response => {
                 console.log(response.data);
                 if (response.data.success) {
-                    window.location.href = "/";
+                    window.location.href = "/rooms/info";
                 }
             })
             .catch(err => console.log(err))
@@ -61,24 +61,24 @@ class CreateRoom extends Component {
                     <div className="form-row">
                     <FormGroup className="col-md-3">
                         <Label>Booking fee($/night): </Label>
-                        <Input name="age" type="number" placeholder="Enter booking fee" onChange={this.handleInputChange} />
+                        <Input name="bookingfee" type="number" placeholder="Enter booking fee" onChange={this.handleInputChange} />
                     </FormGroup>
                     <FormGroup className="col-md-3">
                         <Label>Bedroom(s): </Label>
-                        <Input name="age" type="number" placeholder="Enter number of Bedroom" onChange={this.handleInputChange} />
+                        <Input name="bedroom" type="number" placeholder="Enter number of Bedroom" onChange={this.handleInputChange} />
                     </FormGroup>
                     <FormGroup className="col-md-3">
                         <Label>Bed(s): </Label>
-                        <Input name="age" type="number" placeholder="Enter number of Bed" onChange={this.handleInputChange} />
+                        <Input name="bed" type="number" placeholder="Enter number of Bed" onChange={this.handleInputChange} />
                     </FormGroup>
                     <FormGroup className="col-md-3">
                         <Label>Bath(s): </Label>
-                        <Input name="age" type="number" placeholder="Enter number of Bath" onChange={this.handleInputChange} />
+                        <Input name="bath" type="number" placeholder="Enter number of Bath" onChange={this.handleInputChange} />
                     </FormGroup>
                     </div>
                     <FormGroup>
                         <Label>Number of Guests: </Label>
-                        <Input name="phone" type="number" placeholder="Enter number of Guests" onChange={this.handleInputChange} />
+                        <Input name="numberOfGuests" type="number" placeholder="Enter number of Guests" onChange={this.handleInputChange} />
                     </FormGroup>
                     <FormGroup>
                         <Label>Guest's ID: </Label>

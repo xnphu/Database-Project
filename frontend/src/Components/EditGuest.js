@@ -38,7 +38,7 @@ class EditGuest extends Component {
             .then(response => {
                 console.log(response.data);
                 if (response.data.success) {
-                    window.location.href = "/";
+                    window.location.href = "/guests/info";
                 }
             })
             .catch(err => console.log(err))
@@ -76,7 +76,7 @@ class EditGuest extends Component {
                 </Table>
                 <div className="d-flex justify-content-center">
                     <Button color="success" className="mt-3" onClick={this.handleSubmit}>Save Changes</Button>
-                    <Link to={"/"}>
+                    <Link to={"/guests/info"}>
                         <Button color="primary" className="ml-2 mt-3">Cancel</Button>
                     </Link>
                     <Button
@@ -88,7 +88,7 @@ class EditGuest extends Component {
                                 .then(response => {
                                     console.log(response.data);
                                     if (response.data.success) {
-                                        window.location.href = "/";
+                                        window.location.href = "/guests/info";
                                     }
                                 })
                                 .catch(err => console.log(err));
