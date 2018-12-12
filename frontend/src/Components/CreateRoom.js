@@ -52,37 +52,37 @@ class CreateRoom extends Component {
                 <Form className="mt-2" onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Label>Host's ID: </Label>
-                        <Input name="hostId" placeholder="Enter Host's ID" onChange={this.handleInputChange} />
+                        <Input name="hostId" placeholder="Enter Host's ID" onChange={this.handleInputChange} required/>
                     </FormGroup>
                     <FormGroup>
                         <Label>Address: </Label>
-                        <Input name="address" placeholder="Enter address" onChange={this.handleInputChange} />
+                        <Input name="address" placeholder="Enter address" onChange={this.handleInputChange} required/>
                     </FormGroup>                    
                     <div className="form-row">
                     <FormGroup className="col-md-3">
                         <Label>Booking fee($/night): </Label>
-                        <Input name="bookingfee" type="number" placeholder="Enter booking fee" onChange={this.handleInputChange} />
+                        <Input name="bookingfee" type="number" placeholder="Enter booking fee" onChange={this.handleInputChange} required/>
                     </FormGroup>
                     <FormGroup className="col-md-3">
                         <Label>Bedroom(s): </Label>
-                        <Input name="bedroom" type="number" placeholder="Enter number of Bedroom" onChange={this.handleInputChange} />
+                        <Input name="bedroom" type="number" placeholder="Enter number of Bedroom" onChange={this.handleInputChange} required/>
                     </FormGroup>
                     <FormGroup className="col-md-3">
                         <Label>Bed(s): </Label>
-                        <Input name="bed" type="number" placeholder="Enter number of Bed" onChange={this.handleInputChange} />
+                        <Input name="bed" type="number" placeholder="Enter number of Bed" onChange={this.handleInputChange} required/>
                     </FormGroup>
                     <FormGroup className="col-md-3">
                         <Label>Bath(s): </Label>
-                        <Input name="bath" type="number" placeholder="Enter number of Bath" onChange={this.handleInputChange} />
+                        <Input name="bath" type="number" placeholder="Enter number of Bath" onChange={this.handleInputChange} required/>
                     </FormGroup>
                     </div>
                     <FormGroup>
                         <Label>Number of Guests: </Label>
-                        <Input name="numberOfGuests" type="number" placeholder="Enter number of Guests" onChange={this.handleInputChange} />
+                        <Input name="numberOfGuests" type="number" placeholder="Enter number of Guests" onChange={this.handleInputChange} required/>
                     </FormGroup>
                     <FormGroup>
                         <Label>Guest's ID: </Label>
-                        <Input name="guestId" placeholder="Enter Guest's ID" onChange={this.handleInputChange} />
+                        <Input name="guestId" placeholder="Enter Guest's ID" onChange={this.handleInputChange} required/>
                     </FormGroup>
                     <div className="d-flex justify-content-center mt-3">
                         <Button color="primary">Submit</Button>

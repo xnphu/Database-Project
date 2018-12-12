@@ -7,7 +7,7 @@ import GuestInfo from './Containers/GuestInfo';
 import HostInfo from './Containers/HostInfo';
 import RoomInfo from './Containers/RoomInfo';
 
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import CreateGuest from './Components/CreateGuest';
 import EditGuest from './Components/EditGuest';
 import CreateHost from './Components/CreateHost';
@@ -27,8 +27,16 @@ class App extends Component {
             path="/"
             render={props => {
               return (
-                <div className="d-flex justify-content-center">
-                  <h3 className="mt-5">This is HomeScreen</h3>              
+                <div className="d-flex justify-content-around mt-5">
+                  <Link to="/guests/info">
+                    <button type="button" class="btn btn-info">Guest's Info</button>
+                  </Link>
+                  <Link to="/hosts/info">
+                    <button type="button" class="btn btn-info">Host's Info</button>
+                  </Link>
+                  <Link to="/rooms/info">
+                    <button type="button" class="btn btn-info">Room's Info</button>
+                  </Link>
                 </div>
               );
             }}
@@ -36,7 +44,7 @@ class App extends Component {
           <Route
             path="/guests/info"
             render={props => {
-              return <GuestInfo {...props}/>
+              return <GuestInfo {...props} />
             }}
           />
           <Route
@@ -54,7 +62,7 @@ class App extends Component {
           <Route
             path="/hosts/info"
             render={props => {
-              return <HostInfo {...props}/>
+              return <HostInfo {...props} />
             }}
           />
           <Route
@@ -72,7 +80,7 @@ class App extends Component {
           <Route
             path="/rooms/info"
             render={props => {
-              return <RoomInfo {...props}/>
+              return <RoomInfo {...props} />
             }}
           />
           <Route

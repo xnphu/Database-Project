@@ -39,6 +39,12 @@ class RoomInfo extends Component {
                     <td>{info.bed}</td>
                     <td>{info.bath}</td>
                     <td>
+                        {info.guest.length > 0
+                            ? "Đã được đặt"
+                            : "Còn trống"
+                        }
+                    </td>
+                    <td>
                         <Link to={`/rooms/${info._id}/edit`}>
                             <Button color="success">Edit</Button>
                         </Link>
@@ -65,6 +71,7 @@ class RoomInfo extends Component {
                             <th>Bedroom(s)</th>
                             <th>Bed(s)</th>
                             <th>Bath(s)</th>
+                            <th>State</th>
                             <th></th>
                         </tr>
                     </thead>

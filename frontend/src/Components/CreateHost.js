@@ -44,19 +44,19 @@ class CreateHost extends Component {
                 <Form className="mt-2" onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Label>Name: </Label>
-                        <Input name="name" placeholder="Enter name" onChange={this.handleInputChange} />
+                        <Input name="name" placeholder="Enter name" onChange={this.handleInputChange} required/>
                     </FormGroup>
                     <FormGroup>
                         <Label>Email: </Label>
-                        <Input name="email" placeholder="Enter email" onChange={this.handleInputChange} />
+                        <Input name="email" placeholder="Enter email" onChange={this.handleInputChange} required/>
                     </FormGroup>
                     <FormGroup>
                         <Label>Age: </Label>
-                        <Input name="age" type="number" placeholder="Enter age" onChange={this.handleInputChange} />
+                        <Input name="age" type="number" placeholder="Enter age" onChange={this.handleInputChange} required/>
                     </FormGroup>
                     <FormGroup>
                         <Label>Phone: </Label>
-                        <Input name="phone" type="number" placeholder="Enter phone" onChange={this.handleInputChange} />
+                        <Input name="phone" type="number" placeholder="Enter phone" onChange={this.handleInputChange} required/>
                     </FormGroup>
                     <div className="d-flex justify-content-center">
                         <Button color="primary">Submit</Button>
